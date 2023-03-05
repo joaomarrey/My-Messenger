@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Contacts
+{% endblock %}
+
+{% block main %}
+    <div class="blue2">
+        {% if error %}  
+            <p style="color: black;"><strong>Error</strong>: {{error}}</p>  
+        {% endif %}
+        {% if added %}  
+            <p><strong>Contact Added</strong>: {{username}}</p>  
+        {% endif %}
+        <div>
+            <form style="float: left;"   action="/logout">
+                <button>Logout</button>
+            </form>
+            <form style="float: right;" action="/">
+                <button>Chat</button>
+            </form>
+        </div>
+        <h1 style="clear: both;" class="gvp">
+            Search Contact
+        </h1>
+    </div>
+    <h2  style="padding: 3vh;">
+        Type Username or ID
+    </h2>
+    <form action="/addcontacts" method="post">
+        <div>
+            <input autocomplete="off" autofocus id="username" name="username" placeholder="Username or ID" type="text">
+        </div>
+        <div>
+            <select  style="margin: 3vh;" name="select" id="select">
+                <option value="" selected disabled hidden>Select Username or ID</option>
+                <option value="Username">Username</option>
+                <option value="ID">ID</option>
+            </select>
+        </div>
+        <button  style="margin: 0 0 3vh 0;" type="submit">Search</button>
+    </form>
+    <div>
+        <h2>Results:</h2>
+        {% if found == 1 %}
+            <table class="ble">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(leng) %}
+                        <tr>
+                            <form action="/addcontacts" method="post">
+                                <td class="division">{{list[i]["username"]}}</td>
+                                <td class="division">{{list[i]["id"]}}</td>
+                                <td class="division"><input type="hidden" name="id" value="{{list[i]['id']}}"><button type="submit">Add Contact</button></td>
+                            </form>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% elif found == 0 %}
+            <div>
+                No results found
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

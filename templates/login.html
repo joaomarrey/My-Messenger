@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <div class="blue2">
+        {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+                {% for message in messages %}  
+                    <p>{{ message }}</p>  
+                {% endfor %}  
+            {% endif %}  
+        {% endwith %}  
+        {% if error %}  
+            <p style="color: black;"><strong>Error</strong>: {{error}}</p>  
+        {% endif %}
+        <h1 class="gvp">
+            Login
+        </h1>
+    </div>
+    <div  style="padding: 3vh;">
+        <form action="/login" method="post">
+            <div>
+                <input autocomplete="off" autofocus id="username" name="username" placeholder="Username" type="text">
+            </div>
+            <div>
+                <input id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <button style="margin: 3vh 0 0 0;" type="submit">Login</button>
+        </form>
+        <form action="/register">
+            <button>Register</button>
+        </form>
+    </div>
+{% endblock %}

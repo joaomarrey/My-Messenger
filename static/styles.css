@@ -1,0 +1,194 @@
+* 
+{
+    margin: 0px;
+    padding: 0px;
+ }
+
+.one
+{
+    background-color: #e6e6e6;
+    float: left;
+    width: 25vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0px 0px 0px 0px;
+    height: 100vh;
+}
+.two
+{
+    background-color: white;
+    width: 73vw;
+    float: right;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 75vh;
+    border-style: none none none solid;
+    border-color: #858585;
+}
+.three
+{
+    width: 100%;
+    background-color: #858585;
+    height: 15vh;
+    float: right;
+    width: 73vw;
+    border-style: none none none solid;
+    border-color: #858585;
+}
+.four
+{
+    width: 73vw;
+    height: 10vh;
+    background-color: #e6e6e6;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+div
+{
+    text-align: center;
+}
+.bodyindex
+{
+    margin: 0px;
+    background-color: #858585;
+}
+.message
+{
+    position: relative;
+    padding: 50px;
+}
+.received
+{
+    text-align: left;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    float: left;
+    clear: both;
+    font-size: large;
+}
+.sent
+{
+    text-align: right;
+    background-color: #035efc;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    float: right;
+    clear: both;
+    font-size: large;
+
+}
+.text
+{
+    padding: 20px;
+}
+.text_message
+{
+    text-align: left;
+}
+.textbox
+{
+    height:66px;
+    font-size:14pt;
+    border-radius: 10px;
+}
+.button
+{
+    height:70px;
+    width:70px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.tr
+{
+    background-color: white;
+    font-size: large;
+}
+table.fixed
+{
+    table-layout: fixed;
+    overflow: hidden;
+    width: 23vw;
+}
+table.fixed td:nth-of-type(1) 
+{
+    width: 12vw;
+}
+table.fixed td:nth-of-type(2) 
+{
+    width: 6vw;
+}
+table.fixed td:nth-of-type(3) 
+{
+    width: 5vw;
+}
+body
+{
+    text-align: center;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+table.ble
+{
+    table-layout: fixed;
+    overflow: hidden;
+    background-color: #858585;
+    width: 80vw;
+    font-size: larger;
+
+}
+table.ble td:nth-of-type(1) 
+{
+    background-color: white;
+    overflow: hidden;
+}
+table.ble td:nth-of-type(2) 
+{
+    background-color: white;
+    overflow: hidden;
+}
+table.ble td:nth-of-type(3) 
+{
+    background-color: white;
+    overflow: hidden;
+}
+.larger
+{
+    font-size: larger;
+}
+.blue
+{
+    background-color: #035efc;
+    margin: 0px 0px 0px 0px !important;
+    padding: 0px !important;
+    height: 15vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blue2
+{
+    background-color: #035efc;
+    margin: 0px 0px 0px 0px !important;
+    padding: 0px !important;
+    height: 15vh;
+    color: white;
+}
+.gvp
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

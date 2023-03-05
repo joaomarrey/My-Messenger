@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Messages</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body class="bodyindex">
+        <div class="one">
+            <div style="float: left;">
+                <form action="/logout">
+                    <button>Logout</button>
+                </form>
+            </div>
+            <h1 style="clear: both;">
+                Contacts
+            </h1>
+            <form action="/addcontacts"><button>Add Contacts</button></form>
+            <div class="text">
+                <table class="fixed">
+                    <thead>
+                        <tr class="tr">
+                            <td><strong>Username</strong></td>
+                            <td><strong>id</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in range(leng) %}
+                            <tr class="tr">
+                                <td style="overflow: hidden;">{{lista4[i]}}</td>
+                                <td style="overflow: hidden;">{{lista3[i]}}</td>
+                                <td style="overflow: hidden;"><form action="/" method="post"><input type="hidden" name="username" value="{{lista4[i]}}"><input type="hidden" name="id" value="{{lista3[i]}}"><button type="submit">Chat</button></form></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="four">
+            <h1>{{username}}</h1>
+        </div>
+        <div class="two">
+            <div class="message">
+                {% if on == 1 %}
+                    {% for i in range(lengt) %}
+                        {% if listm[i]['id_who_sent'] == id1 %}
+                        <div class="sent">
+                            <div class="text_message">{{listm[i]['message']}}</div>
+                        </div>
+                        {% else %}
+                        <div class="received">
+                            <div class="text_message">{{listm[i]['message']}}</div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="three">
+            <div>
+                {% if on == 1 %}
+                    <form action="/" method="post">
+                        <input class="textbox" size="75vw" type="text" name="message">
+                        <input type="hidden" name="id2" value="{{id2}}">
+                        <input type="hidden" name="uname" value="{{username}}">
+                        <button class="button" type="submit">Submit</button>
+                    </form>
+                {% endif %}
+                {% if error %}  
+                    <p><strong>Error</strong>: {{error}}</p>  
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
