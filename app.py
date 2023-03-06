@@ -108,6 +108,7 @@ def index():
 
 @app.route("/register", methods=["GET","POST"])
 def register():
+    session.clear()
     session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     if request.method == "POST":
         user = request.form.get("username")
@@ -140,7 +141,7 @@ def register():
 
 @app.route("/login", methods=["GET","POST"])
 def login():
-    session.clear
+    session.clear()
     session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     if request.method == "POST":
         user = request.form.get("username")
@@ -164,7 +165,7 @@ def login():
 @app.route("/logout")
 @login_required
 def logout():
-    session.clear
+    session.clear()
     session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     return redirect("/login")
 
