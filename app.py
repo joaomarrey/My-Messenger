@@ -36,7 +36,7 @@ def index():
         
         # if chat selected
         if request.form.get('id'):
-            session['contact'].clear()
+            session['contact'] = {"id_person": None, "id_chat": None, "username": None}
             try:
                 id = int(request.form.get('id'))
                 username = request.form.get('username')
@@ -108,6 +108,7 @@ def index():
 
 @app.route("/register", methods=["GET","POST"])
 def register():
+    session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     if request.method == "POST":
         user = request.form.get("username")
         password = request.form.get("password")
@@ -140,6 +141,7 @@ def register():
 @app.route("/login", methods=["GET","POST"])
 def login():
     session.clear
+    session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     if request.method == "POST":
         user = request.form.get("username")
         password = request.form.get("password")
@@ -163,11 +165,13 @@ def login():
 @login_required
 def logout():
     session.clear
+    session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     return redirect("/login")
 
 @app.route("/addcontacts",  methods=["GET","POST"])
 @login_required
 def addcontacts():
+    session['contact'] = {"id_person": None, "id_chat": None, "username": None}
     if request.method == "POST":
         if request.form.get("select") == "ID":
             form = request.form.get("username")
