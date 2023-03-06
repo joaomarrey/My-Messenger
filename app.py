@@ -154,6 +154,7 @@ def login():
             error = "invalid username or password"
             return render_template("login.html",error=error)
         session["user_id"] = select[0]["id"]
+        flash("logged in succesfully")
         return redirect("/")
     else:
         return render_template("login.html")
@@ -161,7 +162,7 @@ def login():
 @app.route("/logout")
 @login_required
 def logout():
-    session.clear()
+    session.clear
     return redirect("/login")
 
 @app.route("/addcontacts",  methods=["GET","POST"])
