@@ -1,4 +1,4 @@
-# My-Messenger
+# My Messenger
 #### Video Demo:  https://www.youtube.com/watch?v=MiJ6ilw_M5E
 #### Description:
 This project was made by João Marrey Mendonça and is the final project for the CS50 Introduction to Computer Science online course.
